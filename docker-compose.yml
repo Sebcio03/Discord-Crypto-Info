@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  main:
+    build: .
+    volumes:
+      - ./scripts:/code
+    env_file:
+      - ./.env
+    command: /bin/sh -c 'while true; do python main.py; sleep 1h;done'

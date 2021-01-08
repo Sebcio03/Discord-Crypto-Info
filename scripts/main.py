@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 from datetime import datetime
@@ -5,8 +6,8 @@ from bs4 import BeautifulSoup
 
 BITCOIN_URL = 'https://api.blockchain.com/v3/exchange/tickers/BTC-USD'
 ETHERENUM_URL = 'https://api.blockchain.com/v3/exchange/tickers/ETH-USD'
-EXCHANGE_URL = 'https://free.currconv.com/api/v7/convert?q=USD_PLN&compact=ultra&apiKey=[api_key]'
-WEBHOOK_URL = ''
+EXCHANGE_URL = os.environ['EXCHANGE_URL']
+WEBHOOK_URL = os.environ['WEBHOOK_URL']
 
 
 def get_pasztetowa_price():
